@@ -1,0 +1,3 @@
+p_carnet_homepage:
+    path:     /
+    defaults: { _controller: PCarnetBundle:Default:index }
