@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PCarnetBundle:Default:index.html.twig');
+        return $this->render('PCarnetBundle:index.html.twig');
     }
 }

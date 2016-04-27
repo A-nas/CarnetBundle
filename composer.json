@@ -1,0 +1,8 @@
+{
+
+  "require": {
+
+    "friendsofsymfony/user-bundle": "dev-master"
+  }
+
+}
