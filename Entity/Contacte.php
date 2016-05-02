@@ -556,4 +556,20 @@ class Contacte extends BaseUser
     {
         return $this->categorie;
     }
+
+/*
+    // traietement des contactes
+    public function addContacte(Contacte $contacte){
+        this->contactes[] = $contacte;
+        return this;
+    }
+
+    public function removeContacte(Contacte $contacte){
+        $this->contactes->removeElement($contacte);
+    }
+
+    public function getContactes(){
+        return this->contactes;
+    } 
+*/
 }
