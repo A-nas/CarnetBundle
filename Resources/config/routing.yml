@@ -1,3 +1,16 @@
 p_carnet_homepage:
     path:     /
-    defaults: { _controller: PCarnetBundle:Default:index }
+    defaults: { _controller: PCarnetBundle:Contacte:index }
+
+
+p_carnet_ajouterContactes:
+    path:     /add
+    defaults: { _controller: PCarnetBundle:Contacte:addContactes }
+
+p_carnet_supprimerContactes:
+    path:     /deleteContacte/{id}
+    defaults: { _controller: PCarnetBundle:Contacte:deleteContacte }
+
+p_carnet_ajouterListeContactes:
+    path:     /addContacte/{id}
+    defaults: { _controller: PCarnetBundle:Contacte:addContacte }

@@ -1,0 +1,31 @@
+{% extends "PCarnetBundle::layout.html.twig" %}
+
+{% block body %}
+
+    liste de mes contactes
+
+    {% for listContacte in listContactes %}
+
+			<div id="related-act-inner">
+				<div class="left"><a href=""><img src="images/forms/icon_plus.gif" width="21" height="21" alt="" /></a></div>
+				<div class="right">
+					<h1>{{ listContacte.nom }}</h1>
+					<h2>{{ listContacte.prenom }}</h2>
+					<h2>{{ listContacte.email }}</h2>
+					<h2>{{ listContacte.adresse }}</h2>
+					<h2>{{ listContacte.username }}</h2>
+					<ul class="greyarrow">
+						<li><a href="{{ path('p_carnet_supprimerContactes', { 'id': listContacte.id }) }}">Click here to delete</a></li> 
+					</ul>
+				</div>
+				<div class="clear"></div>
+				
+			</div>
+			<!-- end related-act-inner -->
+			<div class="clear"></div>
+				
+
+
+  	{% endfor %}
+
+{% endblock %}

@@ -10,4 +10,61 @@ namespace P\CarnetBundle\Repository;
  */
 class ContacteRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	 public function getListeContactes($idu){
+
+    	//$q = $this->createQueryBuilder('c1')
+    	//->select('c2')
+    	//->join('c1.contactes','c2')
+    	//->where('c1.id = :id')
+    	//->setParameter('id', $idu)
+  		//;
+        $q = $this->createQueryBuilder('c1')
+    	->select('c2.id')
+    	->join('c1.contactes','c2')
+    	->where('c1.id = :id')
+    	->setParameter('id', $idu)
+  		;
+
+  		//$q = this->getListeContactes($idu);
+
+    	$qb = $this->createQueryBuilder('c3');
+    	$query = $qb->select('c3')
+    	->where('c3.id != :id')
+    	->andWhere($qb->expr()->in('c3.id', $q->getDql()))
+    	->setParameter('id', $idu)
+    	;
+
+  		return $qb
+    	->getQuery()
+    	->getResult()
+    	;
+    }
+
+
+     public function getListeNonContactes($idu){
+
+    	$q = $this->createQueryBuilder('c1')
+    	->select('c2.id')
+    	->join('c1.contactes','c2')
+    	->where('c1.id = :id')
+    	->setParameter('id', $idu)
+  		;
+
+  		//$q = this->getListeContactes($idu);
+
+    	$qb = $this->createQueryBuilder('c3');
+    	$query = $qb->select('c3')
+    	->where('c3.id != :id')
+    	->andWhere($qb->expr()->notIn('c3.id', $q->getDql()))
+    	->setParameter('id', $idu)
+    	;
+
+  		return $query
+    	->getQuery()
+    	->getResult()
+    	;
+
+    }
+
 }

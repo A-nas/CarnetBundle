@@ -179,13 +179,13 @@ $(document).pngFix( );
 			<div class="table">
 				<ul class="select">
 					<li>
-						<a href="#nogo"><b>Mes contacts</b><!--[if IE 7]><!--></a><!--<![endif]-->
+						<a href="{{ path('p_carnet_homepage') }}"><b>Mes contacts</b><!--[if IE 7]><!--></a><!--<![endif]-->
 					</li>
 				</ul>
 				<div class="nav-divider">&nbsp;</div>
 				<ul class="current">
 					<li>
-						<a href="#nogo"><b>Ajouter contacts</b><!--[if IE 7]><!--></a><!--<![endif]-->
+						<a href="{{ path('p_carnet_ajouterContactes') }}"><b>Ajouter contacts</b><!--[if IE 7]><!--></a><!--<![endif]-->
 					</li>
 				</ul>
 				<div class="nav-divider">&nbsp;</div>
@@ -273,6 +273,8 @@ $(document).pngFix( );
 										  {% block fos_user_content %}
                                           {% endblock fos_user_content %}
 										<!-- separateur style (ne lefface pas ) -->
+										  {% block body %}
+										  {% endblock body %}
 										<tr>
 											<td><img src="{{asset('bundles/PCarnet/images/shared/blank.gif')}}" width="695" height="1" alt="blank" /></td>
 											<td></td>
